@@ -1,0 +1,186 @@
+{
+  "_build_pass": "1 \u2014 Brief Lock",
+  "_built_by": "Icarus via setup-topeka-foundation.py",
+  "_date": "2026-03-24",
+  "_note": "Auto-generated brief. Claude Code builds from this in Pass 2.",
+  "site": {
+    "business_name": "Topeka Foundation Pros",
+    "domain": "topekafoundationpros.com",
+    "niche": "Foundation Repair",
+    "niche_slug": "foundation-repair",
+    "city": "Topeka",
+    "state": "Kansas",
+    "state_abbr": "KS",
+    "county": "Shawnee County",
+    "phone": "(785) 706-4425",
+    "phone_formatted": "(785) 706-4425",
+    "phone_digits": "17857064425",
+    "email": "contact@topekafoundationpros.com",
+    "years_in_business": "10",
+    "tagline": "Topeka's Trusted Foundation Repair \u2014 Permanent Solutions, Guaranteed Results",
+    "web3forms_key": "0219881f-13e5-4175-b720-517b8d10c028"
+  },
+  "seo": {
+    "primary_keyword": "foundation repair topeka ks",
+    "search_volume": 360,
+    "keyword_difficulty": 25,
+    "cpc": 37.63,
+    "rental_tier": "$200/mo",
+    "meta_title": "Foundation Repair in Topeka, KS | Topeka Foundation Pros",
+    "meta_description": "Professional foundation repair in Topeka, KS. Licensed & insured. Free inspections & estimates. Pier installation, crack repair, waterproofing. Call (785) 706-4425."
+  },
+  "design": {
+    "primary_color": "#2c3e50",
+    "accent_color": "#e67e22",
+    "style": "solid_trust",
+    "font_heading": "Space Grotesk",
+    "font_body": "DM Sans",
+    "hero_style": "split_with_before_after"
+  },
+  "trust_signals": {
+    "badge_1": "Licensed & Insured",
+    "badge_2": "Free Inspections",
+    "badge_3": "5-Star Rated",
+    "badge_4": "Lifetime Warranty",
+    "years_experience": "10+",
+    "jobs_completed": "800+",
+    "guarantee": "Transferable Lifetime Warranty"
+  },
+  "services": [
+    {
+      "slug": "foundation-repair",
+      "name": "Foundation Repair"
+    },
+    {
+      "slug": "basement-waterproofing",
+      "name": "Basement Waterproofing"
+    },
+    {
+      "slug": "foundation-crack-repair",
+      "name": "Foundation Crack Repair"
+    },
+    {
+      "slug": "pier-installation",
+      "name": "Pier Installation"
+    },
+    {
+      "slug": "crawl-space-repair",
+      "name": "Crawl Space Repair"
+    },
+    {
+      "slug": "concrete-leveling",
+      "name": "Concrete Leveling"
+    }
+  ],
+  "service_areas": [
+    "topeka",
+    "lawrence",
+    "manhattan",
+    "emporia",
+    "junction-city",
+    "olathe",
+    "shawnee",
+    "lenexa",
+    "overland-park",
+    "ottawa"
+  ],
+  "testimonials": [
+    {
+      "name": "Robert K.",
+      "city": "Topeka",
+      "stars": 5,
+      "text": "Had major cracks in my basement walls that kept getting worse. Topeka Foundation Pros came out the same week, explained everything clearly, and the repair was done in two days. No more cracks, no more water. Worth every penny."
+    },
+    {
+      "name": "Linda M.",
+      "city": "Lawrence",
+      "stars": 5,
+      "text": "Our doors started sticking and we noticed the floors were uneven. They identified settling on the north side and installed piers to stabilize everything. Professional crew, clean work, and a warranty that transfers if we sell."
+    },
+    {
+      "name": "James T.",
+      "city": "Topeka",
+      "stars": 5,
+      "text": "Free inspection was thorough \u2014 they showed me exactly what was happening with photos and measurements. No pressure, fair price. The crew was in and out in one day for the crack repairs."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How much does foundation repair cost in Topeka, KS?",
+      "a": "Foundation repair in Topeka typically ranges from $2,500 to $15,000 depending on the severity of damage and repair method needed. Minor crack repairs run $500\u2013$1,500, while full pier installation or major structural work ranges $5,000\u2013$15,000+. We provide free inspections and detailed estimates."
+    },
+    {
+      "q": "What are signs I need foundation repair?",
+      "a": "Common signs include cracks in walls or ceilings (especially diagonal or stair-step cracks), doors and windows that stick or won't close properly, uneven or sloping floors, gaps between walls and ceiling or floor, and visible cracks in the foundation itself. Kansas expansive clay soil is a major contributor to foundation issues."
+    },
+    {
+      "q": "Does homeowners insurance cover foundation repair in Kansas?",
+      "a": "Standard Kansas homeowners insurance typically does NOT cover foundation repair caused by settling, shifting soil, or normal wear. However, sudden events like plumbing leaks that cause foundation damage may be partially covered. We help document damage for insurance claims when applicable."
+    },
+    {
+      "q": "Do you serve Lawrence, Manhattan, and the KC metro area?",
+      "a": "Yes \u2014 we serve all of northeast Kansas including Lawrence, Manhattan, Junction City, Emporia, and extend into the western KC metro suburbs including Olathe, Shawnee, Lenexa, and Overland Park."
+    },
+    {
+      "q": "How long does foundation repair take?",
+      "a": "Most foundation repairs take 1\u20133 days depending on the scope. Simple crack injections can be completed in a few hours. Pier installation for a typical home takes 1\u20132 days. Major structural work may take 3\u20135 days. Your home remains fully livable during repairs."
+    }
+  ],
+  "pages": {
+    "root": [
+      "index.html",
+      "about.html",
+      "contact.html",
+      "pricing.html",
+      "faq.html",
+      "thank-you.html",
+      "404.html",
+      "sitemap.xml",
+      "robots.txt",
+      "privacy-policy.html",
+      "terms-of-service.html"
+    ],
+    "services": [
+      "services/foundation-repair.html",
+      "services/basement-waterproofing.html",
+      "services/foundation-crack-repair.html",
+      "services/pier-installation.html",
+      "services/crawl-space-repair.html",
+      "services/concrete-leveling.html"
+    ],
+    "locations": [
+      "locations/topeka.html",
+      "locations/lawrence.html",
+      "locations/manhattan.html",
+      "locations/emporia.html",
+      "locations/junction-city.html",
+      "locations/olathe.html",
+      "locations/shawnee.html",
+      "locations/lenexa.html",
+      "locations/overland-park.html",
+      "locations/ottawa.html"
+    ],
+    "blog": [
+      "blog/index.html",
+      "blog/how-much-does-foundation-repair-cost-topeka-ks.html",
+      "blog/signs-you-need-foundation-repair.html",
+      "blog/how-to-choose-foundation-repair-contractor.html"
+    ]
+  },
+  "build": {
+    "github_repo": "topeka-foundation-repair",
+    "github_org": "deme-cyber11",
+    "twilio_number": "(785) 706-4425",
+    "twilio_area_code": "785",
+    "ga4_id": "G-D6ZBY16329",
+    "indexnow_key": "a3f7b2c9d4e1f8a5b6c3d0e7f4a1b8c5",
+    "started": "2026-03-24",
+    "completed": "",
+    "qa_passed": false,
+    "qa_errors": 0,
+    "committed": false,
+    "domain_registered": false,
+    "deployed": false,
+    "gsc_submitted": false
+  }
+}
