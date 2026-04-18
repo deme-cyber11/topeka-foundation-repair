@@ -189,9 +189,10 @@
                             <p>Fill out the form below and our team will contact you within 24 hours to schedule your free foundation inspection.</p>
                         </div>
                         <div class="card-body">
-                            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                            <form action="https://lead-manager-api.irontigerdigital.workers.dev/ingest" method="POST" class="contact-form">
+        <input type="hidden" name="_honey" style="display:none">
+        <input type="hidden" name="_subject" value="New Lead — Flint Hills Foundation">
                                 <!-- Web3Forms Access Key -->
-                                <input type="hidden" name="access_key" value="0219881f-13e5-4175-b720-517b8d10c028">
                                 <input type="hidden" name="redirect" value="https://flinthillsfoundation.com/thank-you.html">
 
                                 <div class="form-row">
