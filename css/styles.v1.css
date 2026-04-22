@@ -376,3 +376,41 @@ p{margin-bottom:1rem}
   font-style: normal;
 }
 /* END LOGO-GEN */
+
+/* ===== DROPDOWN-MENU REGRESSION FIX =====
+   Markup uses `.dropdown-menu`, but original CSS only styled `.nav-dropdown-menu`.
+   Without this rule, the <ul.dropdown-menu> falls back to `display:block` and
+   renders auto-open on every viewport. Scope to .nav-dropdown to stay local. */
+.nav-dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--white);
+  box-shadow: var(--shadow-lg);
+  border-radius: var(--radius);
+  padding: .5rem 0;
+  min-width: 220px;
+  z-index: 100;
+  list-style: none;
+  margin: 0;
+}
+.nav-dropdown:hover .dropdown-menu { display: block; }
+.nav-dropdown .dropdown-menu a {
+  display: block;
+  padding: .55rem 1.25rem;
+  font-size: .9rem;
+}
+.nav-dropdown .dropdown-menu a:hover {
+  background: var(--light);
+  color: var(--accent);
+}
+@media (max-width: 991px) {
+  .nav-dropdown .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    display: none;
+    padding-left: 1rem;
+  }
+  .nav-dropdown.open .dropdown-menu { display: block; }
+}
