@@ -72,12 +72,11 @@ textarea{resize:vertical;min-height:88px;line-height:1.6}
 .footer{text-align:center;padding:32px 16px;font-size:.8125rem;color:#94a3b8}
 .footer a{color:#e94560;font-weight:500}
 </style>
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 <body>
 
 <nav class="nav">
-  <div class="nav__logo"><span>Flint Hills</span> Foundation</div>
+  <div class="nav__logo">Foundation <span>Pro</span></div>
   <a href="tel:7857064425" class="nav__cta">(785) 706-4425</a>
 </nav>
 
@@ -85,12 +84,12 @@ textarea{resize:vertical;min-height:88px;line-height:1.6}
 
   <div class="page-header">
     <span class="page-header__eyebrow">Free Estimate</span>
-    <h1>Request a Free Estimate from Flint Hills Foundation</h1>
+    <h1>Foundation Repair Details</h1>
     <p>Tell us about your foundation concerns so we can assess properly.</p>
   </div>
 
   <form id="form" action="https://lead-manager-api.irontigerdigital.workers.dev/ingest" method="POST">
-    <input type="hidden" name="site_domain" value="flinthillsfoundation.com">
+    <input type="hidden" name="site" value="flinthillsfoundation.com">
     <input type="hidden" name="_subject" value="New Estimate Request — Foundation Repair in Topeka, KS">
     <input type="hidden" name="_redirect" value="https://flinthillsfoundation.com/estimate/#success">
     <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
@@ -110,16 +109,30 @@ textarea{resize:vertical;min-height:88px;line-height:1.6}
         </div>
         <div class="field">
           <label for="phone">Phone Number <span class="req">*</span></label>
-          <input type="tel" id="phone" name="phone" required placeholder="(785) 706-4425">
+          <input type="tel" id="phone" name="phone" required placeholder="(555) 000-1234">
         </div>
       </div>
       <div class="field">
         <label for="email">Email Address <span class="req">*</span></label>
         <input type="email" id="email" name="email" required placeholder="you@example.com">
       </div>
+      <div class="field">
+        <label for="address">Street Address <span class="req">*</span></label>
+        <input type="text" id="address" name="address" required placeholder="123 Main St" autocomplete="address-line1">
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="city">City <span class="req">*</span></label>
+          <input type="text" id="city" name="city" required placeholder="City" autocomplete="address-level2">
+        </div>
+        <div class="field">
+          <label for="state">State <span class="req">*</span></label>
+          <input type="text" id="state" name="state" required placeholder="TX" maxlength="2" autocomplete="address-level1" oninput="this.value=this.value.toUpperCase()">
+        </div>
+      </div>
       <div class="field" style="margin-bottom:0">
-        <label for="address">Property Address <span class="req">*</span></label>
-        <input type="text" id="address" name="address" required placeholder="123 Main St, City, State ZIP">
+        <label for="zip">ZIP Code <span class="req">*</span></label>
+        <input type="text" id="zip" name="zip" required placeholder="00000" pattern="[0-9]{5}(-[0-9]{4})?" inputmode="numeric" autocomplete="postal-code">
       </div>
     </div>
 
@@ -268,8 +281,8 @@ textarea{resize:vertical;min-height:88px;line-height:1.6}
         Additional Details
       </div>
       <div class="field">
-        <label for="notes">Project Description <span class="req">*</span></label>
-        <textarea id="notes" name="notes" rows="4" required placeholder="Describe the project in more detail, any concerns, previous quotes received, access issues, etc."></textarea>
+        <label for="notes">Anything else we should know?</label>
+        <textarea id="notes" name="notes" rows="4" placeholder="Describe the project in more detail, any concerns, previous quotes received, access issues, etc."></textarea>
       </div>
       <div class="field" style="margin-bottom:0">
         <label>Photos <span class="hint">(optional — helps us give a more accurate estimate)</span></label>
@@ -317,38 +330,26 @@ textarea{resize:vertical;min-height:88px;line-height:1.6}
 <script>
 if(window.location.hash==='#success'){document.getElementById('form').style.display='none';document.getElementById('success').style.display='block';}
 document.getElementById('photos').addEventListener('change',function(){document.getElementById('upload-label').textContent=this.files.length?this.files.length+' photo'+(this.files.length>1?'s':'')+' selected':'Tap to upload photos';});
+document.getElementById('form').addEventListener('submit',function(e){
+  var checked=document.querySelectorAll('input[name="services[]"]:checked');
+  if(checked.length===0){
+    e.preventDefault();
+    var grid=document.querySelector('.check-grid');
+    grid.style.outline='2px solid #ef4444';
+    grid.style.borderRadius='10px';
+    grid.style.padding='4px';
+    grid.scrollIntoView({behavior:'smooth',block:'center'});
+    return;
+  }
+  var city=document.getElementById('city').value.trim();
+  var state=document.getElementById('state').value.trim();
+  var zip=document.getElementById('zip').value.trim();
+  var addr=document.getElementById('address');
+  addr.value=addr.value.trim()+', '+city+', '+state+' '+zip;
+});
+document.querySelectorAll('input[name="services[]"]').forEach(function(cb){
+  cb.addEventListener('change',function(){document.querySelector('.check-grid').style.outline='';});
+});
 </script>
 </body>
 </html>
-<h2>Professional Estimate in Topeka, KS</h2>
-<p>Understanding the true condition of your home's foundation is the first critical step towards ensuring its long-term stability and safety. In Topeka, KS, where fluctuating temperatures, expansive clay soils, and varying moisture levels can significantly impact structural integrity, a professional foundation estimate is not just a recommendation—it's a necessity. At Topeka Foundation Repair, our comprehensive estimate service provides homeowners with a detailed, expert assessment of their foundation issues, whether it's cracks, settling, bowing walls, or water intrusion in basements and crawl spaces. We delve deep to identify the root cause of problems, offering clear insights into the extent of damage and the most effective, tailored solutions. This crucial initial evaluation eliminates guesswork, allowing you to make informed decisions and safeguard your most valuable asset against costly future repairs and potential structural failures common to the Topeka area.</p>
-
-<h2>What Is Estimate?</h2>
-<p>An "estimate" from Topeka Foundation Repair is a thorough, no-obligation assessment of your property's foundation health and waterproofing needs. It begins with a meticulous on-site inspection by our experienced foundation specialists. During this process, we examine all accessible areas of your foundation, including basements, crawl spaces, exterior walls, and surrounding landscapes, looking for signs of distress such as cracks, uneven floors, doors and windows that stick, and water damage. We utilize industry-standard techniques and our extensive local expertise to diagnose issues accurately. The outcome is a detailed written proposal outlining our findings, explaining the nature of the identified problems, and presenting a precise scope of work along with a transparent cost breakdown for the recommended foundation repair or waterproofing solutions tailored specifically for your Topeka home.</p>
-
-<h2>Benefits of Professional Estimate</h2>
-<ul>
-<li><strong>Accurate Diagnosis and Problem Identification:</strong> Our professional estimate goes beyond surface-level observations, employing expertise to accurately pinpoint the specific cause of foundation distress or water issues. This ensures that the recommended solutions target the root problem, preventing recurrent issues and providing lasting stability for your Topeka home.</li>
-<li><strong>Customized Solutions for Your Home:</strong> Every foundation problem is unique, especially given Topeka's diverse soil conditions and housing stock. An expert estimate allows us to develop a precise, custom-engineered repair plan that addresses your property's specific structural challenges, rather than applying generic fixes.</li>
-<li><strong>Transparent Costing and No Hidden Fees:</strong> With a detailed estimate from Topeka Foundation Repair, you receive a clear, itemized breakdown of all proposed services and associated costs. This transparency empowers you to understand where your investment goes, ensuring there are no unpleasant financial surprises down the line.</li>
-<li><strong>Informed Decision Making and Peace of Mind:</strong> Our comprehensive estimate provides you with all the necessary information—from diagnosis to recommended solutions and costs—to make confident, informed decisions about your home's future. This expert guidance offers invaluable peace of mind, knowing your property is in capable hands.</li>
-</ul>
-
-<h2>Our Estimate Process</h2>
-<p>At Topeka Foundation Repair, our estimate process is designed to be as straightforward and informative as possible, ensuring you receive a clear understanding of your foundation's condition and the best path forward. We prioritize open communication and thoroughness from your initial call to the final proposal. Our team of local Topeka specialists is dedicated to providing an experience that is professional, respectful of your time, and focused on delivering precise, actionable information. We pride ourselves on our meticulous approach, which combines visual inspection with a deep understanding of local geological and structural factors to produce an accurate and reliable assessment for every homeowner.</p>
-<ol>
-<li><strong>Initial Contact & Scheduling:</strong> Your journey begins when you contact us via phone or our website. We'll gather basic information about your concerns and schedule a convenient time for one of our foundation experts to visit your Topeka property for an on-site evaluation.</li>
-<li><strong>On-Site Inspection & Assessment:</strong> Our specialist will conduct a comprehensive inspection of your foundation, both inside and out. They will meticulously examine structural elements, soil conditions, drainage, and any visible signs of damage, using their expertise to diagnose the underlying issues affecting your home.</li>
-<li><strong>Detailed Proposal & Explanation:</strong> Following the inspection, we will compile a detailed, customized proposal outlining our findings, recommended repair or waterproofing solutions, and a transparent cost estimate. We'll walk you through every aspect, ensuring you understand the problems and proposed remedies.</li>
-<li><strong>Q&A and Project Commencement:</strong> This is your opportunity to ask any questions or discuss concerns. Once you're fully informed and comfortable with the plan, we can move forward with scheduling your foundation repair or waterproofing project, initiating the process of restoring your home's stability.</li>
-</ol>
-
-<h2>Why Topeka, KS Properties Need Estimate</h2>
-<p>Topeka, KS, presents unique challenges for home foundations, making a professional estimate essential. The region's distinct climate, characterized by harsh winters with freeze-thaw cycles and hot, humid summers, causes soil to expand and contract dramatically. This constant movement, particularly in the prevalent expansive clay soils, puts immense stress on foundations, leading to cracks, settlement, and structural shifts. Furthermore, Topeka's heavy rainfall can saturate the ground, increasing hydrostatic pressure against basement walls and saturating crawl spaces, leading to waterproofing issues and potential mold growth. Many homes in Topeka, especially older properties, were built before modern foundation techniques and materials, making them more susceptible to these environmental stresses. A detailed estimate accounts for these local factors, providing a precise diagnosis and tailored solutions to protect your Topeka home against the specific environmental and geological conditions unique to our area, preventing minor issues from escalating into major structural failures.</p>
-
-<h2>Common Questions About Estimate</h2>
-<div class="faq-item"><h3>How much does Estimate cost in Topeka, KS?</h3><p>At Topeka Foundation Repair, we are pleased to offer completely free, no-obligation estimates for foundation repair and waterproofing services in Topeka, KS. While the estimate itself costs nothing, the actual cost of repairs can vary significantly based on the severity of the damage, the type of solution needed (e.g., piering, crack repair, basement waterproofing), and the accessibility of the affected areas. Most foundation repair projects in Topeka can range from a few thousand dollars for minor crack repairs or simple waterproofing solutions to upwards of $10,000-$30,000+ for extensive structural underpinning or comprehensive basement system installations. Your free estimate will provide a precise figure for your specific situation.</p></div>
-<div class="faq-item"><h3>How long does Estimate take?</h3><p>The on-site inspection for a professional estimate in Topeka typically takes between 60 to 90 minutes, depending on the size of your home and the complexity of the observed issues. This allows our specialists ample time for a thorough assessment. Following the inspection, we can often present our findings and a detailed proposal on the same day. For more intricate cases, it might take an additional day or two to finalize the custom solution and cost breakdown, ensuring accuracy and precision.</p></div>
-<div class="faq-item"><h3>How do I know if I need Estimate?</h3><p>Several clear signs indicate your Topeka home might benefit from a professional foundation estimate. Look for interior or exterior wall cracks, especially stair-step cracks in brickwork or horizontal cracks in basement walls. Sticky windows or doors, uneven or sagging floors, bowing walls, and a musty odor in your basement or crawl space are also strong indicators. If you notice standing water in your crawl space or basement after rain, it's crucial to get an estimate for waterproofing. Early detection through a professional estimate can prevent minor issues from becoming costly structural nightmares.</p></div>
-
-<p class="cta-text">Ready to schedule Estimate in Topeka, KS? Contact Topeka Foundation Repair today for a free estimate. We serve the entire Topeka, KS area with fast scheduling and guaranteed results.</p>
