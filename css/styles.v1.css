@@ -465,6 +465,13 @@ p{margin-bottom:1rem}
 .nav-dropdown .dropdown-menu a:hover{background:var(--light);color:var(--accent)}
 
 /* --- hero --------------------------------------------------------- */
+/* .hero .container is ALREADY a 2-col grid expecting hero-text and
+   hero-visual as direct children, but the HTML wraps them in
+   .hero-content — so that wrapper sat in column 1 at 556px and the two
+   columns collapsed inside it. Let the wrapper span the full width and
+   carry the grid itself. Same for any other single-wrapper section. */
+.hero .container > .hero-content,
+.hero .container > *:only-child{grid-column:1 / -1;width:100%}
 .hero-content{
   display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center;
 }
