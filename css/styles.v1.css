@@ -484,14 +484,39 @@ p{margin-bottom:1rem}
 .btn-secondary{background:var(--white);color:var(--primary)}
 .btn-secondary:hover{background:var(--light);transform:translateY(-2px);box-shadow:var(--shadow)}
 
-/* before/after pair */
-.ba-slider{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
-.ba-before,.ba-after{position:relative;border-radius:var(--radius-lg);overflow:hidden}
-.ba-before img,.ba-after img{display:block;width:100%;height:100%;object-fit:cover}
-.ba-label{
-  position:absolute;left:.6rem;bottom:.6rem;padding:.25rem .7rem;border-radius:999px;
-  font-size:.75rem;font-weight:600;background:rgba(0,0,0,.65);color:var(--white);
+/* before/after COMPARISON slider.
+   js/main.js drives it: handle.style.left = pct% and
+   afterImg.style.clipPath = inset(0 0 0 pct%). So .ba-after must be
+   absolutely overlaid on .ba-before at full size — a side-by-side grid
+   would make the clip meaningless and the handle point at nothing. */
+.ba-slider{
+  position:relative;aspect-ratio:4/3;width:100%;overflow:hidden;
+  border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);
+  cursor:ew-resize;user-select:none;-webkit-user-select:none;touch-action:none;
 }
+.ba-before,.ba-after{position:absolute;inset:0}
+.ba-after{clip-path:inset(0 0 0 50%)}
+.ba-before img,.ba-after img{
+  display:block;width:100%;height:100%;object-fit:cover;pointer-events:none;
+}
+.ba-handle{
+  position:absolute;top:0;bottom:0;left:50%;width:3px;
+  background:var(--white);transform:translateX(-50%);
+  box-shadow:0 0 0 1px rgba(0,0,0,.15);pointer-events:none;
+}
+.ba-handle::after{
+  content:'';position:absolute;top:50%;left:50%;
+  width:38px;height:38px;border-radius:50%;
+  transform:translate(-50%,-50%);background:var(--white);
+  box-shadow:var(--shadow);
+}
+.ba-label{
+  position:absolute;bottom:.65rem;padding:.25rem .7rem;border-radius:999px;
+  font-size:.75rem;font-weight:600;letter-spacing:.02em;
+  background:rgba(0,0,0,.66);color:var(--white);z-index:2;white-space:nowrap;
+}
+.ba-label-before{left:.65rem}
+.ba-label-after{right:.65rem}
 
 /* --- cards & sections --------------------------------------------- */
 .service-icon{
