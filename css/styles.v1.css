@@ -270,7 +270,11 @@ p{margin-bottom:1rem}
 
 /* ===== SECTION HEADER ===== */
 .section-header{text-align:center;max-width:650px;margin:0 auto 2.5rem}
-.section-header p{color:var(--gray);font-size:1.05rem}
+/* --gray (#6c757d) measures 4.33:1 on the new tint band — just under AA.
+   Darkened for muted text only; the token itself is untouched. */
+.section-header p{color:#5b6570;font-size:1.05rem}
+.band--tint{--gray-on-tint:#5b6570}
+.band--tint .text-muted,.band--tint .muted,.band--tint small{color:#5b6570}
 
 /* ===== WHY CHOOSE US ===== */
 .features-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem}
@@ -613,7 +617,11 @@ p{margin-bottom:1rem}
   content:'';position:absolute;left:50%;bottom:0;transform:translateX(-50%);
   width:56px;height:3px;border-radius:2px;background:var(--rule);
 }
-.section-header p{color:var(--gray);font-size:1.05rem}
+/* --gray (#6c757d) measures 4.33:1 on the new tint band — just under AA.
+   Darkened for muted text only; the token itself is untouched. */
+.section-header p{color:#5b6570;font-size:1.05rem}
+.band--tint{--gray-on-tint:#5b6570}
+.band--tint .text-muted,.band--tint .muted,.band--tint small{color:#5b6570}
 .band--deep .section-header p{color:#aab8c4}
 
 /* --- scroll reveal ------------------------------------------------
