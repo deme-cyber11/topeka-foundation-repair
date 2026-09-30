@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://topekafoundationpros.com/sitemap.xml
+Sitemap: https://flinthillsfoundation.com/sitemap.xml
