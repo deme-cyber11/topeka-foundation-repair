@@ -31,7 +31,7 @@ button{cursor:pointer;font-family:inherit;border:none}
 .card__title-icon{width:28px;height:28px;background:rgba(233,69,96,0.08);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .card__title-icon svg{width:15px;height:15px;stroke:#e94560;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-@media(max-width:520px){.row{grid-template-columns:1fr}}
+@media(max-width:520px){.row{grid-template-columns:1fr;row-gap:16px;margin-bottom:16px}.row>.field{margin-bottom:0}}
 .field{margin-bottom:16px}
 .field:last-child{margin-bottom:0}
 label{display:block;font-size:.8125rem;font-weight:600;color:#374151;margin-bottom:6px;line-height:1.4}
@@ -70,6 +70,11 @@ textarea{resize:vertical;min-height:88px;line-height:1.6}
 .success a{color:#e94560;font-weight:600}
 .footer{text-align:center;padding:32px 16px;font-size:.8125rem;color:#94a3b8}
 .footer a{color:#e94560;font-weight:500}
+.nav__links{display:flex;gap:4px;margin-left:auto;margin-right:12px}
+.nav__links a{color:#fff;font-weight:600;font-size:.875rem;padding:8px 12px;border-radius:8px}
+.nav__links a:hover{background:rgba(255,255,255,.1)}
+@media(max-width:640px){.nav{flex-wrap:wrap;padding:10px 16px;row-gap:6px}.nav__links{order:3;width:100%;margin:0;justify-content:space-between}.footer{font-size:.9rem}}
+@media(hover:none){.nav__logo{display:inline-block;line-height:44px}.nav__links a,.nav__cta{min-height:44px;display:inline-flex;align-items:center}.check-item input[type=checkbox]{height:40px}}
 </style>
 <!-- favicon + link preview (tools/link-preview-kit.py) -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -87,7 +92,8 @@ textarea{resize:vertical;min-height:88px;line-height:1.6}
 <body>
 
 <nav class="nav">
-  <div class="nav__logo">Foundation <span>Pro</span></div>
+  <a href="/" class="nav__logo">Flint Hills <span>Foundation</span></a>
+  <div class="nav__links"><a href="/services/foundation-repair.html">Services</a><a href="/pricing.html">Pricing</a><a href="/contact.html">Contact</a></div>
   <a href="tel:7857064425" class="nav__cta">(785) 706-4425</a>
 </nav>
 
@@ -141,7 +147,7 @@ textarea{resize:vertical;min-height:88px;line-height:1.6}
         </div>
         <div class="field">
           <label for="state">State <span class="req">*</span></label>
-          <input type="text" id="state" name="state" required placeholder="TX" maxlength="20" autocomplete="address-level1" oninput="this.value=this.value.toUpperCase()" onchange="this.value=this.value.toUpperCase()" pattern="[A-Za-z .]{2,20}" title="State — 2-letter code or full name">
+          <input type="text" id="state" name="state" required placeholder="KS" maxlength="20" autocomplete="address-level1" oninput="this.value=this.value.toUpperCase()" onchange="this.value=this.value.toUpperCase()" pattern="[A-Za-z .]{2,20}" title="State — 2-letter code or full name">
         </div>
       </div>
       <div class="field" style="margin-bottom:0">
@@ -338,7 +344,7 @@ textarea{resize:vertical;min-height:88px;line-height:1.6}
 </main>
 
 <div class="footer">
-  <p>&copy; 2026 Foundation Repair in Topeka, KS &nbsp;|&nbsp; Licensed &amp; Insured&nbsp;|&nbsp; <a href='tel:7857064425'>(785) 706-4425</a></p>
+  <p>&copy; 2026 Flint Hills Foundation &nbsp;|&nbsp; Licensed &amp; Insured&nbsp;|&nbsp; <a href='tel:7857064425'>(785) 706-4425</a></p>
 </div>
 
 <script>
