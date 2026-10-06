@@ -365,7 +365,7 @@ body.dm .dm-hero :is(.breadcrumb, .breadcrumbs) > .container { display: flex; fl
 body.dm .dm-hero :is(.breadcrumb, .breadcrumbs) li + li::before { content: "/"; margin-right: 6px; color: rgba(255,255,255,.45); }
 body.dm .dm-hero :is(.breadcrumb, .breadcrumbs) .ph { font-size: .8rem; opacity: .6; }
 /* a few location heroes carry a second paragraph after the buttons; give it room */
-body.dm .dm-hero :is(.hero-buttons, .dm-hero__actions) + p { margin-top: 22px; }
+body.dm .dm-hero :is(.hero-buttons, .dm-hero__actions) ~ p { margin-top: 22px; }
 /* secondary buttons on dark bands that used class names no stylesheet defined (rendered as bare text) */
 body.dm :is(.dm-hero, .dm-cta) a.btn:is(.btn--ghost, .btn--ghost-white) { background: rgba(255,255,255,.08); color: #fff; border: 1.5px solid rgba(255,255,255,.42); }
 body.dm a.cta-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; border-radius: 12px; background: var(--accent); color: var(--accent-ink); font-weight: 800; text-decoration: none; }
