@@ -347,3 +347,92 @@ body.dm .pricing-card-features li::before { display: none; }
 @media (max-width: 640px) {
   body.dm .trust-bar .trust-items { grid-template-columns: repeat(2, auto); column-gap: 20px; row-gap: 14px; }
 }
+
+/* ---------- 2026-10-06 visual check ---------- */
+/* phone and tablet menu: backdrop-filter on the sticky header made the header the containing block
+   for the position:fixed menu panel, so the open menu was clipped to about 50px and showed only "Home" */
+@media (max-width: 1100px) {
+  body.dm .dm-header { backdrop-filter: none; -webkit-backdrop-filter: none; background: #fff; }
+}
+/* anchors used by breadcrumbs and estimate buttons land below the sticky header */
+body.dm :is(#services, #contact) { scroll-margin-top: 90px; }
+
+/* page heroes: the breadcrumb trail sat in a different spot on every template (above the title, between
+   the text and the buttons, under the buttons), centred, over a rule line. One quiet trail at the top. */
+body.dm .dm-hero .dm-wrap { display: flex; flex-direction: column; }
+body.dm .dm-hero :is(.breadcrumb, .breadcrumbs) { order: -1; border: 0; margin: 0 0 16px; }
+body.dm .dm-hero :is(.breadcrumb, .breadcrumbs) > .container { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; max-width: none; margin: 0; padding: 0; }
+body.dm .dm-hero :is(.breadcrumb, .breadcrumbs) li + li::before { content: "/"; margin-right: 6px; color: rgba(255,255,255,.45); }
+body.dm .dm-hero :is(.breadcrumb, .breadcrumbs) .ph { font-size: .8rem; opacity: .6; }
+/* a few location heroes carry a second paragraph after the buttons; give it room */
+body.dm .dm-hero :is(.hero-buttons, .dm-hero__actions) + p { margin-top: 22px; }
+/* secondary buttons on dark bands that used class names no stylesheet defined (rendered as bare text) */
+body.dm :is(.dm-hero, .dm-cta) a.btn:is(.btn--ghost, .btn--ghost-white) { background: rgba(255,255,255,.08); color: #fff; border: 1.5px solid rgba(255,255,255,.42); }
+body.dm a.cta-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; border-radius: 12px; background: var(--accent); color: var(--accent-ink); font-weight: 800; text-decoration: none; }
+body.dm a.cta-button.secondary { background: rgba(255,255,255,.08); color: #fff; border: 1.5px solid rgba(255,255,255,.42); }
+body.dm .dm-split__text > a.cta-button { margin-bottom: 18px; }
+/* 404 subtitle was near-black on the dark hero */
+body.dm .dm-hero h2 { color: rgba(255,255,255,.9); }
+/* thank-you page check icon (was a 14px icon-font glyph) */
+body.dm .dm-ty-icon { width: 56px; height: 56px; color: var(--accent); margin-bottom: 6px; }
+
+/* home */
+body.dm.dm-home .cta-section p { color: rgba(255,255,255,.88); }
+/* the numbered-process timeline line was also drawn through the cost cards */
+body.dm .band .container > div[style*="max-width:800px"]:not(:has(> div > div[style*="border-radius:50%"]))::before { display: none; }
+body.dm .trust-item .dm-trust-i { width: 24px; height: 24px; color: var(--accent); vertical-align: middle; }
+@media (max-width: 768px) { body.dm.dm-home .hero-cta { justify-content: center; } }
+@media (max-width: 640px) { body.dm.dm-home .hero-cta .btn { width: 100%; justify-content: center; } }
+
+/* split sections: long text next to a centred photo left big empty bands above and below the photo */
+@media (min-width: 861px) {
+  body.dm .dm-split { align-items: start; }
+  body.dm .dm-split__media { position: sticky; top: 96px; }
+}
+
+/* centred section headers: the accent bar sat at the left edge while the heading was centred, plus a second underline */
+body.dm .dm-band .section-header h2::before { margin-left: auto; margin-right: auto; }
+body.dm .dm-band .section-header h2::after { display: none; }
+
+/* pricing: cost factors and benefits had no layout rules (a long list with tiny icons), FAQ sat left of the centred header */
+body.dm :is(.cost-factors, .pricing-benefits) { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 0 0 64px; }
+body.dm .pricing-benefits { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+body.dm :is(.cost-factor, .pricing-benefit) { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 24px; box-shadow: var(--shadow); }
+body.dm :is(.cost-factor-icon, .pricing-benefit-icon) { width: 46px; height: 46px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: var(--badge-bg); color: var(--brand); font-size: 24px; margin: 0 0 14px; }
+body.dm :is(.cost-factor, .pricing-benefit) h3 { font-size: 1.1rem; margin: 0 0 8px; }
+body.dm :is(.cost-factor, .pricing-benefit) p { margin: 0; font-size: .98rem; line-height: 1.6; }
+body.dm .section-header.center + .dm-faq { margin-left: auto; margin-right: auto; }
+
+/* contact: form and sidebar had lost their two-column layout and the sidebar its row styles */
+@media (min-width: 981px) {
+  body.dm .dm-wrap:has(> .content-main + .sidebar) { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(300px, 1fr); gap: 36px; align-items: start; }
+}
+body.dm .contact-form .form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0 16px; }
+body.dm .content-main .card-header { margin-bottom: 18px; }
+body.dm .sidebar .sidebar-card { background: var(--soft); border: 1px solid var(--line); }
+body.dm .contact-info { display: grid; gap: 16px; }
+body.dm :is(.contact-info-item, .trust-badge) { display: flex; gap: 14px; align-items: flex-start; }
+body.dm :is(.contact-info-item, .trust-badge) > i { font-size: 24px; color: var(--brand); flex-shrink: 0; margin-top: 2px; }
+body.dm :is(.contact-info-item, .trust-badge) strong { display: block; color: var(--ink); }
+body.dm :is(.contact-info-item, .trust-badge) p { margin: 0; }
+body.dm .sidebar .process-steps { display: grid; gap: 10px; }
+body.dm .sidebar .process-step { display: flex; gap: 14px; align-items: flex-start; text-align: left; padding: 14px 16px; }
+body.dm :is(.process-step-number, .step-number) { flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--accent); color: var(--accent-ink); font-weight: 800; font-size: .95rem; }
+body.dm .process-step-content h4 { margin: 0 0 4px; font-size: 1rem; }
+body.dm .process-step-content p { margin: 0; font-size: .92rem; }
+/* Olathe process list: bare numbers above each step */
+body.dm .process-steps > .step { display: grid; grid-template-columns: 40px 1fr; column-gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+body.dm .process-steps > .step:last-child { border-bottom: 0; }
+body.dm .process-steps > .step > .step-number { grid-row: span 2; width: 40px; height: 40px; }
+body.dm .process-steps > .step > h3 { margin: 6px 0; font-size: 1.1rem; }
+body.dm .process-steps > .step > p { grid-column: 2; margin: 0; }
+
+/* about: an empty image column squeezed the story into a narrow strip; process cards showed the number twice */
+body.dm .about-grid:not(:has(> .about-image *)) { grid-template-columns: 1fr; }
+body.dm .about-grid:not(:has(> .about-image *)) > .about-image { display: none; }
+body.dm .process-step > .process-number { display: none; }
+body.dm .process-icon { font-size: 28px; color: var(--brand); margin: 6px 0 10px; }
+/* four-card service grids stayed two columns on phones (cards about 160px wide) */
+@media (max-width: 640px) {
+  body.dm .services-grid:has(> :last-child:nth-child(4)) { grid-template-columns: 1fr; }
+}
